@@ -11,6 +11,7 @@ root.config(background="white")
 
 number = random.randint(1,20)
 
+
 def hello():
     print("Hello")
 
@@ -18,11 +19,11 @@ def check_number():
     guess = entrytext.get()
     guess = int(guess)
     if guess > number:
-        tkinter.messagebox.showinfo("High, Your guess is too high")
+        tkinter.messagebox.showinfo("High", " Your guess is too high")
     if guess < number:
-        tkinter.messagebox.showinfo("Low, Your guess is too low")
+        tkinter.messagebox.showinfo("Low"," Your guess is too low")
     if guess == number:
-        tkinter.messagebox.showinfo("Well done, You guessed the numer!")
+        tkinter.messagebox.showinfo("Well done", " You guessed the numer!")
 
 def welcome():
     myname = entryname.get()
@@ -39,6 +40,10 @@ entrytext = Entry(root, width = 10)
 entrytext.place(x= 100, y = 150)
 label3 = Label(root, text = "Guess a number between 1 and 20:", background = "white", font = ("Arial", 15), foreground= "black")
 label3.place(x = 20, y = 120)
+OKbutton = Button(root, text= "OK", command=welcome)
+OKbutton.place(x=125, y=90)
+GuessButton = Button(root, text="Guess", command=check_number)
+GuessButton.place(x=115, y=180)
 
 
 root.mainloop()
